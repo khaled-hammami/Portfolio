@@ -11,7 +11,6 @@ import aspNet from '../assets/aspNet.png';
 import sqlServer from '../assets/sqlserver.png';
 import mongodb from '../assets/mongodb.png';
 import github from '../assets/github.png';
-import docker from '../assets/docker.png';
 
 
 const Experience = () => {
@@ -97,7 +96,7 @@ const Experience = () => {
     ]
     return (
        
-        <div name="experience" className="bg-gradient-to-b from-gray-800 to-black w-full h-screen ">
+        <div name="experience" className="pt-32 bg-gradient-to-b from-gray-800 to-black w-full  ">
             <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full text-white" >
                 <div>
                     <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">Experience</p>
