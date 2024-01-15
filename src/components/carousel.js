@@ -24,7 +24,7 @@ export default function Carousel({ slides }) {
                 }}
             >
                 {slides.map((s, index) => (
-                    <img key={index} src={s} alt={`slide-${index}`} className="w-128 h-56" />
+                    <img key={index} src={s} alt={`slide-${index}`} className="w-full h-56" />
                 ))}
             </div>
             <div className="absolute top-0 h-full w-full flex justify-between items-center text-white">

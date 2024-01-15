@@ -7,7 +7,7 @@ import angular from "../assets/angular.png";
 import bootstrap from "../assets/bootstrap.png";
 import tailwind from "../assets/tailwind.png";
 import node from '../assets/node.png';
-import aspNet from '../assets/aspNet.png';
+import aspNet from '../assets/aspNett';
 import sqlServer from '../assets/sqlserver.png';
 import mongodb from '../assets/mongodb.png';
 import github from '../assets/github.png';
@@ -38,7 +38,7 @@ const Experience = () => {
         {
             id: 4,
             src: react,
-            title:'REACT',
+            title:'REACT JS',
             style:'shadow-blue-500'
         },
         {
@@ -68,7 +68,7 @@ const Experience = () => {
         {
             id: 9,
             src: aspNet,
-            title:'asp.Net',
+            title:'ASP.Net ',
             style:'shadow-blue-500'
         },
         {

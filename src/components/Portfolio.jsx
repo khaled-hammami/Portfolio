@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+import { HiArrowTopRightOnSquare } from "react-icons/hi2";
 
 //imporation les images de projets Crocoheats 
 import CrocoheatsProjectimage1 from '../assets/portfolio/CrocoheatsProject/Image_1.png';
@@ -18,6 +19,11 @@ import GpsTrackingSystemProjectimage2 from '../assets/portfolio/GpsTrackingSyste
 import GpsTrackingSystemProjectimage3 from '../assets/portfolio/GpsTrackingSystemProject/Image_3.png';
 import GpsTrackingSystemProjectimage4 from '../assets/portfolio/GpsTrackingSystemProject/Image_4.png';
 import GpsTrackingSystemProjectimage5 from '../assets/portfolio/GpsTrackingSystemProject/Image_5.png';
+
+//imporation les images de projets GpsTrackingSystem
+
+import LandingPageProjetimage1 from '../assets/portfolio/AwsomeLandingPage/image1.png';
+
 
 
 import Carousel from "../components/carousel";
@@ -102,6 +108,16 @@ const Portfolio = () => {
   ]
 
 
+  const LandingPage = [
+
+    {
+      id: 1,
+      src: LandingPageProjetimage1,
+    }
+  ];
+
+
+
   const portfolio = [
     {
       id: 1,
@@ -115,7 +131,42 @@ const Portfolio = () => {
       hasCode: false,
       hasDemo: false,
     },
+    {
+      id: 3,
+      images: LandingPage,
+      hasCode: "https://github.com/khaled-hammami/landing-page-with-react-and-tailwind",
+      hasDemo: "https://practice7.netlify.app/",
+    },
   ];
+
+
+  const renderDemoButton = (demo, openModal) => {
+    if (demo === true) {
+      // Afficher le bouton "Demo" qui ouvre la vidéo
+      return (
+        <button onClick={openModal} className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 flex items-center justify-center">
+           <span className="mr-2">Demo</span>
+          < HiArrowTopRightOnSquare />
+          
+        </button>
+      );
+    } else if (typeof demo === 'string' && demo !== '') {
+      // Afficher le bouton "Demo" qui redirige vers le lien en direct
+      return (
+        <a href={demo} target="_blank" rel="noopener noreferrer" className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 flex items-center justify-center">
+          <span className="mr-2">Demo</span>
+          < HiArrowTopRightOnSquare />
+        </a>
+      );
+    } else {
+      // Ne rien afficher s'il n'y a pas de démo disponible
+      return (
+        <p className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 text-gray-500">
+          Demo
+        </p>
+      );
+    }
+  };
 
   return (
     <div name="portfolio" className="pt-24 bg-gradient-to-b from-black to-gray-800 w-full text-white">
@@ -130,22 +181,19 @@ const Portfolio = () => {
               <Carousel slides={images.map(img => img.src)} className="rounded-xl" />
               <div className="flex items-center justify-center">
 
-                {hasDemo ? (
-                  <button onClick={openModal} className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">Demo</button>
-                ) : (
-                  <p className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 text-gray-500">
-                    Demo
-                  </p>
-                )}
+                {renderDemoButton(hasDemo, openModal)}
+
 
                 {hasCode ? (
-                  <button className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105">Code</button>
+                  <a href={hasCode} target="_blank" rel="noopener noreferrer" className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 flex items-center justify-center">
+                    <span className="mr-2">Code</span>
+                    < HiArrowTopRightOnSquare />
+                  </a>
                 ) : (
                   <p className="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 text-gray-500">
                     Code
                   </p>
                 )}
-
 
 
               </div>

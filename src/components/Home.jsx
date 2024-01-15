@@ -23,7 +23,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="md:mt-0">
+        <div className="md:mt-0 pt-8">
           <img
             src={hero1}
             alt="my portfolio"
